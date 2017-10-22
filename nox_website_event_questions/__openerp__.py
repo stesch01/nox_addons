@@ -15,14 +15,14 @@
 	'website_event_questions'
     ],
     'description':"""
-                website event question datatypes
+                website event questions
         """,	
     "demo": [],
     "data": [
-	'views/website_event_question_datatypes_backend.xml',
-    'views/website_event_question_datatypes_template.xml',
-	'report/website_event_report_menu.xml',
-	'views/asset.xml'
+	'views/nox_website_event_questions.xml',
+    'views/nox_website_event_questions_template.xml',
+	'report/nox_website_event_report_menu.xml',
+	'views/asset.xml',
     ],
     "test": [],
     "js": [],
@@ -30,5 +30,5 @@
     "qweb": [		
 	],
     "installable": True,
-    "auto_install": True,
+    "auto_install": False,
 }
