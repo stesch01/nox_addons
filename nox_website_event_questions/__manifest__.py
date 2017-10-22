@@ -1,18 +1,24 @@
-# coding: utf-8
-###########################################################################
-#    Module Written using Odoo, Open Source Management Solution
-###############Credits######################################################
-#    Coded by: Chandran Nepolean <chandrantwins@gmail.com>,
-#############################################################################
+# -*- coding: utf-8 -*-
+##############################################################################
+#
+#    Odoo, Open Source Management Solution
+#    Copyright (C) 2016-TODAY Linserv Aktiebolag, Sweden (<http://www.linserv.se>).
+#
+##############################################################################
+
 {
     "name": "Website event question datatypes",
     "version": "1.0",
-    "author": "Chandran",
+    "author": "Linserv AB",
     "category": "Events",
-    "website": "",
+    "website": "www.linserv.se",
+    "contributors": [
+        'Chandran <chandrantwins@gmail.com>',
+        'Riyaj Pathan <rjpathan19@gmail.com>'
+        ]
     "license": "",
     "depends": [ 
-	'website_event_questions'
+	   'website_event_questions'
     ],
     'description':"""
                 website event questions
