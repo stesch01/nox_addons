@@ -1,0 +1,6 @@
+.horizontal-line-grey{
+    width : 100%;
+    border-bottom: 2px solid lightgrey;
+    height: 3px;
+    text-align: center;
+}
