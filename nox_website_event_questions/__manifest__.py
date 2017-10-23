@@ -27,8 +27,10 @@
     "data": [
 	'views/nox_website_event_questions.xml',
     'views/nox_website_event_questions_template.xml',
-	'report/nox_website_event_report_menu.xml',
-	'views/asset.xml',
+	
+    'report/website_event_report_menu.xml',
+	
+    'views/asset.xml',
     ],
     "test": [],
     "js": [],
