@@ -15,7 +15,7 @@
     "contributors": [
         'Chandran <chandrantwins@gmail.com>',
         'Riyaj Pathan <rjpathan19@gmail.com>'
-        ]
+        ],
     "license": "",
     "depends": [ 
 	   'website_event_questions'
