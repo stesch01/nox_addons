@@ -31,8 +31,6 @@
     'report/website_event_report_menu.xml',
 	
     'views/asset.xml',
-
-    'security/ir.model.access.csv',
     ],
     "test": [],
     "js": [],

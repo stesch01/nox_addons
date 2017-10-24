@@ -5,14 +5,25 @@
     <field name="model">event.question</field>
 	<field name="inherit_id" ref="website_event_questions.view_event_question_form"/>
     <field name="arch" type="xml">
+        <xpath expr="//h1[1]" position="before">
+            <label for="title" string="Displayed Question or Instruction"/>
+        </xpath>
+
+        <label for="is_individual" position="attributes">
+            <attribute name="string">Is Required?</attribute>
+        </label>
+
 		<field name="answer_ids" position="before">
-			<div>
-                 <label for="data_type_id" class="b"/>
-			</div>
-			<div>
-                 <field name="data_type_id"/>
-            </div>
+            <group col="2">
+                <field name="note" colspan="4"/>
+                <field name="data_type" colspan="4" required="1"/>
+            </group>
 		</field>
+
+        <field name="answer_ids" position="attributes">
+            <attribute name="attrs">{'invisible':[('data_type','=',False)]}</attribute>
+        </field>
+
     </field>
 </record>
 </odoo>

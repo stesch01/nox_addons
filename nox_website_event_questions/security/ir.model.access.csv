@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_event_question_datatype_user,event_question_datatype_user,model_question_datatype,base.group_user,1,0,0,0
-access_event_question_datatype public,event_question_datatype public,model_question_datatype,base.group_public,1,0,0,0
-access_event_question_datatype_event_user,event_question_datatype event user,model_question_datatype,event.group_event_user,1,0,0,0
