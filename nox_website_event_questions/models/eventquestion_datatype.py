@@ -17,6 +17,5 @@ class eventquestion_datatype(models.Model):
     							('dropdown', 'Dropdown'), 
     							('checkbox', 'Checkbox'),
     							('radio', 'Radio'),
-    							('number', 'Number'),
-    							('range', 'Range')], string='Datatypes')
+    							('number', 'Number')], string='Datatypes')
     note = fields.Text('Comment')
