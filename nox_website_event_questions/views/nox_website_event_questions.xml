@@ -21,8 +21,12 @@
 		</field>
 
         <field name="answer_ids" position="attributes">
-            <attribute name="attrs">{'invisible':[('data_type','=',False)]}</attribute>
+            <attribute name="attrs">{'invisible':[('data_type', 'not in', ('dropdown', 'checkbox', 'radio'))]}</attribute>
         </field>
+
+        <xpath expr="//field[@name='answer_ids']/tree[1]/field[@name='name']" position="attributes">
+            <attribute name="string">Options</attribute>
+        </xpath>
 
     </field>
 </record>
