@@ -18,10 +18,10 @@ class WebsiteEventQuestionController(WebsiteEvent):
             for key, value in registration.iteritems():
                 _logger.error("KEY: %r", key)
                 _logger.error("VALUE: %r", value)
-               if key.startswith('questions_ids-') and isinstance(value, six.integer_types):
+                if key.startswith('questions_ids-') and isinstance(value, six.integer_types):
                     question_ids.append([4, int(value)])
                 elif key.startswith('questions_ids-') and isinstance(value, six.string_types):
-                    question_ids.append([4, int(key.replace("questions_ids-", ""))])        
+                    question_ids.append([4, int(key.replace("questions_ids-", ""))])
             registration['question_ids'] = question_ids
 
         return registrations

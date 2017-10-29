@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_event_form_inherit_question">
+            <field name="name">event.form.inherit.question</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id" ref="website_event_questions.view_event_form_inherit_question"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[1]" position="attributes">
+                    <attribute name="string">Advanced Questions</attribute>
+                </xpath>
+
+                <field name="answer_ids" position="attributes">
+                    <attribute name="string">Options</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_event_registration_answers_ext">
+            <field name="name">event.registration.answers.form</field>
+            <field name="model">event.registration</field>
+            <field name="inherit_id" ref="event.view_event_registration_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet[1]/group[1]" position="before">
+                    <div class="oe_button_box" name="oe_button_box">
+                        <button name="action_open_answers" 
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-pencil-square-o">
+                            <field name="total_answers" widget="statinfo" string="Answers"/>
+                        </button>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_event_registration_form_inherit_question_nox">
+            <field name="name">nox.event.registration.form.inherit.question</field>
+            <field name="model">event.registration</field>
+            <field name="inherit_id" ref="website_event_questions.view_event_registration_form_inherit_question"/>
+            <field name="arch" type="xml">
+                <field name="answer_ids" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+            </field>
+        </record>
+
+        <!-- event.registration.answer (Answers) views -->
+        <record id="view_event_registration_question_answer_tree" model="ir.ui.view">
+            <field name="name">event.attendee.question.answers</field>
+            <field name="model">event.registration.question.answer</field>
+            <field name="arch" type="xml">
+                <tree string="Event Attendee Answers" create="0">
+                    <field name="event_id"/>
+                    <field name="event_registration_id"/>
+                    <field name="event_question"/>
+                    <field name="event_answer"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_event_registration_question_answers" model="ir.actions.act_window">
+            <field name="name">Event Registration Attendee Answers</field>
+            <field name="res_model">event.registration.question.answer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+    </data>
+</odoo>

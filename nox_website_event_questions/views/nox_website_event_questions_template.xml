@@ -37,8 +37,12 @@
 								<div class="mb16 mt16">									
 									<div t-foreach='event.specific_question_ids' t-as='question'>	
 										<t t-set="acounter" t-value="acounter + 1"/>
-										<div class="row mb4">											
+										<div class="row mb4">	
 											<div class="col-md-12">
+												<div class="form-group" t-if="question.data_type == 'number'">
+													<label for="#{acounter}-ta-#{question.id}"><t t-esc="question.title" /></label>
+													<input type="number" class="form-control" t-attf-name="#{ccounter}-questions_ids-#{question.id}"  />
+												</div>
 												<div class="form-group" t-if="question.data_type == 'longtext'">
 													<label for="#{acounter}-ta-#{question.id}"><t t-esc="question.title" /></label>
 													<textarea class="form-control" t-attf-name="#{acounter}-questions_ids-#{question.id}" rows="5"></textarea>
@@ -84,6 +88,10 @@
 								<t t-set="ccounter" t-value="ccounter + 1"/>
 								<div class="row mb4">									
 									<div class="col-md-12">
+										<div class="form-group" t-if="question.data_type == 'number'">
+											<label><t t-esc="question.title" /></label>
+											<input type="number" class="form-control" t-attf-name="#{ccounter}-questions_ids-#{question.id}"  />
+										</div>
 										<div class="form-group" t-if="question.data_type == 'longtext'">
 											<label><t t-esc="question.title" /></label>
 											<textarea class="form-control" t-attf-name="#{ccounter}-question_ids-#{question.id}" rows="5"></textarea>
@@ -96,7 +104,7 @@
 												</t>
 											</select>
 										</div>
-										 <div class="form-group" t-if="question.data_type == 'text' or question.data_type == 'email'">
+									 	<div class="form-group" t-if="question.data_type == 'text' or question.data_type == 'email'">
 											<label><t t-esc="question.title" /></label>
 											<input t-if="question.data_type == 'text'" type="text" class="form-control" t-attf-name="#{ccounter}-questions_ids-#{question.id}"  />
 											<input t-if="question.data_type == 'email'" type="email" class="form-control" t-attf-name="#{ccounter}-questions_ids-#{question.id}" />
