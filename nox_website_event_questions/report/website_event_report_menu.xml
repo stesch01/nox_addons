@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<data>
-		<record model="ir.actions.act_window" id="action_event_report_answer_report">
-			<field name="name">Answer Analysis</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="model">event.report.answer.report</field>
-			<field name="res_model">event.report.answer.report</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">tree</field>
-       </record>
-	   <record model="ir.ui.view" id="view_tree_event_registration_questionanswer" >
-			<field name="name">event.report.answer.report.tree</field>
-			<field name="model">event.report.answer.report</field>
-			<field name="arch" type="xml">
-				<tree>									
-					<field name="eventname"/>
-					<field name="eventtypename"/>
-					<field name="attendeename"/>
-					<field name="questiontitle"/>
-					<field name="answername"/>
-					<field name="create_date"/>					
-				</tree>
-			</field>
-		</record>
-		<menuitem name="Answers" id="menu_report_event_answers"  parent="event.menu_reporting_events" sequence="5" action="action_event_report_answer_report"/>
+		
+		<menuitem name="Answers" 
+			id="menu_report_event_answers"  
+			parent="event.menu_reporting_events" 
+			sequence="5" 
+			action="action_event_registration_question_answers"/>
+
 	</data>
 </odoo>
