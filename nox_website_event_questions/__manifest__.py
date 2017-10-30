@@ -11,6 +11,7 @@
     "version": "1.0",
     "author": "Linserv AB",
     "category": "Events",
+    "summary": "Website event question datatypes",
     "website": "www.linserv.se",
     "contributors": [
         'Chandran <chandrantwins@gmail.com>',
@@ -21,7 +22,18 @@
 	   'website_event_questions'
     ],
     'description':"""
-                website event questions
+##################################################
+    Website event question datatypes
+##################################################
+This modules adds different data types to define Event Questions.    
+    * Data Types :
+        * Text
+        * Longtext
+        * Email
+        * Dropdown
+        * Checkbox
+        * Radio
+        * Number
         """,	
     "demo": [],
     "data": [
