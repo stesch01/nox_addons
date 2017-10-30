@@ -47,6 +47,6 @@ class EventRegistrationQAnswer(models.Model):
     _description = "Event Attendee - Question's Answers"
 
     event_registration_id = fields.Many2one('event.registration', 'Attendee')
-    event_id = fields.Many2one(related='event_registration_id.event_id', string='Event')
+    event_id = fields.Many2one(related='event_registration_id.event_id', string='Event', store=True)
     event_question = fields.Char('Question')
     event_answer = fields.Char('Answer')

@@ -61,6 +61,22 @@
             </field>
         </record>
 
+        <record id="view_event_registration_question_answer_search" model="ir.ui.view">
+            <field name="name">event.attendee.question.answers.search</field>
+            <field name="model">event.registration.question.answer</field>
+            <field name="arch" type="xml">
+                <search string="Answers">
+                    <field name="event_id"/>
+                    <field name="event_registration_id"/>
+                    <field name="event_question"/>
+                    <group expand="0" string="Group By">
+                        <filter name="groupby_event" string="Event" domain="[]" context="{'group_by': 'event_id'}"/>
+                        <filter name="groupby_attendee" string="Attendee" domain="[]" context="{'group_by': 'event_registration_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
         <record id="action_event_registration_question_answers" model="ir.actions.act_window">
             <field name="name">Event Registration Attendee Answers</field>
             <field name="res_model">event.registration.question.answer</field>
