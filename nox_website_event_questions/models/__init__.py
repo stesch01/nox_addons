@@ -6,4 +6,4 @@
 #
 ##############################################################################
 
-from . import eventquestion_datatype
+from . import event
