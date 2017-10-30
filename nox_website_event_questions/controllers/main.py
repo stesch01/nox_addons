@@ -1,28 +1,43 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+##############################################################################
+#
+#    Odoo, Open Source Management Solution
+#    Copyright (C) 2016-TODAY Linserv Aktiebolag, Sweden (<http://www.linserv.se>).
+#
+##############################################################################
 
 from odoo.addons.website_event_questions.controllers.main import WebsiteEvent
-
-import six
-import logging
-_logger = logging.getLogger(__name__)
+from odoo import http
+from odoo.http import request
 
 class WebsiteEventQuestionController(WebsiteEvent):
 
-    def _process_registration_details(self, details):
-        _logger.error("_process_registration_details ............................... ")
-        ''' Process data posted from the attendee details form. '''
-        registrations = super(WebsiteEventQuestionController, self)._process_registration_details(details)
+    @http.route(['/event/<model("event.event"):event>/registration/confirm'], type='http', auth="public", methods=['POST'], website=True)
+    def registration_confirm(self, event, **post):
+        """redefine function to update Attendee Answers
+        """
+        Attendees = request.env['event.registration']
+        registrations = super(WebsiteEventQuestionController, self)._process_registration_details(post)
+
         for registration in registrations:
-            question_ids = []
-            for key, value in registration.iteritems():
-                _logger.error("KEY: %r", key)
-                _logger.error("VALUE: %r", value)
-                if key.startswith('questions_ids-') and isinstance(value, six.integer_types):
-                    question_ids.append([4, int(value)])
-                elif key.startswith('questions_ids-') and isinstance(value, six.string_types):
-                    question_ids.append([4, int(key.replace("questions_ids-", ""))])
-            registration['question_ids'] = question_ids
+            registration['event_id'] = event
+            attendee_id = Attendees.sudo().create(
+                Attendees._prepare_attendee_values(registration))
+            Attendees += attendee_id
+            #create attendee answers:
+            for qa in registration:
+                question_ref = str(qa).split('questions_ids-')
+                if len(question_ref) > 1:
+                    question_id = int(question_ref[-1])
+                    Question = request.env['event.question'].sudo().browse([question_id])
+                    answer = registration[qa]
+                    request.env['event.registration.question.answer'].sudo().create({
+                            'event_registration_id': attendee_id.id,
+                            'event_question': Question.title,
+                            'event_answer': answer
+                        })
 
-        return registrations
-
+        return request.render("website_event.registration_complete", {
+            'attendees': Attendees,
+            'event': event,
+        })

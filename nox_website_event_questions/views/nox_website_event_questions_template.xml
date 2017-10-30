@@ -40,16 +40,16 @@
 										<div class="row mb4">	
 											<div class="col-md-12">
 												<div class="form-group" t-if="question.data_type == 'number'">
-													<label for="#{acounter}-ta-#{question.id}"><t t-esc="question.title" /></label>
+													<label for="#{counter}-ta-#{question.id}"><t t-esc="question.title" /></label>
 													<input type="number" class="form-control" t-attf-name="#{ccounter}-questions_ids-#{question.id}"  />
 												</div>
 												<div class="form-group" t-if="question.data_type == 'longtext'">
-													<label for="#{acounter}-ta-#{question.id}"><t t-esc="question.title" /></label>
-													<textarea class="form-control" t-attf-name="#{acounter}-questions_ids-#{question.id}" rows="5"></textarea>
+													<label for="#{counter}-ta-#{question.id}"><t t-esc="question.title" /></label>
+													<textarea class="form-control" t-attf-name="#{counter}-questions_ids-#{question.id}" rows="5"></textarea>
 												</div>
 												<div t-if="question.data_type == 'dropdown'">
 													<label><t t-esc="question.title" /></label>
-													<select  t-attf-name="#{acounter}-answer_ids-#{question.id}" class="form-control">
+													<select  t-attf-name="#{counter}-answer_ids-#{question.id}" class="form-control">
 														<t t-foreach='question.answer_ids' t-as="answer">
 														  <option t-esc='answer.name' t-att-value='answer.id'/>
 														</t>
@@ -57,16 +57,16 @@
 												</div>
 												 <div class="form-group" t-if="question.data_type == 'text' or question.data_type == 'email'">
 													<label><t t-esc="question.title" /></label>
-													<input t-if="question.data_type == 'text'" type="text" class="form-control" t-attf-name="#{acounter}-questions_ids-#{question.id}"  />
-													<input t-if="question.data_type == 'email'" type="email" class="form-control"  t-attf-name="#{acounter}-questions_ids-#{question.id}" />
+													<input t-if="question.data_type == 'text'" type="text" class="form-control" t-attf-name="#{counter}-questions_ids-#{question.id}"  />
+													<input t-if="question.data_type == 'email'" type="email" class="form-control"  t-attf-name="#{counter}-questions_ids-#{question.id}" />
 												</div>
 												<div class="form-group" t-if="question.data_type == 'checkbox' or question.data_type == 'radio'">
 													<label><t t-esc="question.title" /></label>
 													<t t-foreach='question.answer_ids' t-as="dtvCbItem">
 														<div t-attf-class="{{ 'checkbox' if question.data_type == 'checkbox' else 'radio' }}">
 															<label>
-																<input t-if="question.data_type == 'checkbox'" t-attf-name="#{acounter}-questions_ids-#{question.id}" t-attf-value="#{dtvCbItem.name}" type="checkbox"/>
-																<input t-if="question.data_type == 'radio'" t-attf-name="#{acounter}-questions_ids-#{question.id}" t-attf-value="#{dtvCbItem.name}" type="radio"/>
+																<input t-if="question.data_type == 'checkbox'" t-attf-name="#{counter}-questions_ids-#{question.id}" t-attf-value="#{dtvCbItem.name}" type="checkbox"/>
+																<input t-if="question.data_type == 'radio'" t-attf-name="#{counter}-questions_ids-#{question.id}" t-attf-value="#{dtvCbItem.name}" type="radio"/>
 																<t t-esc="dtvCbItem.name" />
 															</label>
 														</div>
