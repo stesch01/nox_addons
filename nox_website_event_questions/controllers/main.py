@@ -41,3 +41,13 @@ class WebsiteEventQuestionController(WebsiteEvent):
             'attendees': Attendees,
             'event': event,
         })
+
+    @http.route(['/event/<model("event.event"):event>/registration/new'], type='json', auth="public", methods=['POST'], website=True)
+    def registration_new(self, event, **post):
+        """redefine function to call new template
+        """
+        tickets = self._process_tickets_details(post)
+        if not tickets:
+            return request.redirect("/event/%s" % slug(event))
+        return request.env['ir.ui.view'].render_template("nox_website_event_questions.nox_registration_attendee_details", {'tickets': tickets, 'event': event})
+        
