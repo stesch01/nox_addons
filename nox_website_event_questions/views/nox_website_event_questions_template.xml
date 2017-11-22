@@ -133,7 +133,7 @@
 <template id="nox_registration_attendee_details" name="NOX Registration Attendee Details">
 	<div id="modal_attendees_registration" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg">
-            <form id="attendee_registration" t-attf-action="/event/#{slug(event)}/registration/confirm" method="post">
+            <form id="nox_attendee_registration" t-attf-action="/event/#{slug(event)}/registration/confirm" method="post">
                 <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                 <div class="modal-content">
                     <div class="modal-header">

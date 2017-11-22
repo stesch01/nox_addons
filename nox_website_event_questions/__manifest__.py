@@ -19,7 +19,8 @@
         ],
     "license": "",
     "depends": [ 
-	   'website_event_questions'
+        'website_event_questions',
+        'website_event_sale'
     ],
     'description':"""
 ##################################################
