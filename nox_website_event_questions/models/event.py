@@ -20,6 +20,14 @@ class eventquestion_datatype(models.Model):
     							('number', 'Number')], string='Datatypes')
     note = fields.Text('Comment')
 
+    @api.model
+    def default_get(self, fields):
+        res = super(eventquestion_datatype, self).default_get(fields)
+
+        #set default value checked
+        res.update({'is_individual': True})
+        return res
+
 class EventRegistration(models.Model):
     _inherit = "event.registration"
 
