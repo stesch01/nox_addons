@@ -7,6 +7,10 @@
             <field name="model">event.event</field>
             <field name="inherit_id" ref="website_event_questions.view_event_form_inherit_question"/>
             <field name="arch" type="xml">
+                <field name="is_individual" position="attributes">
+                    <attribute name="string">Mandatory</attribute>
+                </field>
+
                 <xpath expr="//page[last()]" position="attributes">
                     <attribute name="string">Advanced Questions</attribute>
                 </xpath>
