@@ -10,7 +10,7 @@
         </xpath>
 
         <label for="is_individual" position="attributes">
-            <attribute name="string">Is Required?</attribute>
+            <attribute name="string">Mandatory</attribute>
         </label>
 
 		<field name="answer_ids" position="before">
