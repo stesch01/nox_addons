@@ -164,12 +164,12 @@
 									<div class="row">
 										<div class="col-md-4"><strong>Name</strong></div>
 										<div class="col-md-5"><strong>Email</strong></div>
-										<div class="col-md-3"><strong>Phone</strong> <span class="text-muted">(Optional)</span></div>
+										<div class="col-md-3"><strong>Phone</strong></div>
 									</div>
 									<div class="row mb4">
 										<div class="col-md-4"><input class='form-control' type='text' t-attf-name="#{counter}-name" required="This field is required"/></div>
 										<div class="col-md-5"><input class='form-control' type='email' t-attf-name="#{counter}-email" required="This field is required"/></div>
-										<div class="col-md-3"><input class='form-control' type='tel' t-attf-name="#{counter}-phone"/></div>
+										<div class="col-md-3"><input class='form-control' type='tel' t-attf-name="#{counter}-phone" required="This field is required"/></div>
 										<input class='hidden' type='text' t-attf-name="#{counter}-ticket_id" t-attf-value="#{ticket['id']}"/>
 									</div>
 									<t t-if="event.specific_question_ids">
