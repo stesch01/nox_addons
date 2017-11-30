@@ -180,15 +180,22 @@
 													<div class="col-md-12">
 														<div class="form-group" t-if="question.data_type == 'number'">
 															<label for="#{counter}-ta-#{question.id}"><t t-esc="question.title" /></label>
-															<input type="number" class="form-control" t-attf-name="#{ccounter}-questions_ids-#{question.id}"  />
+															<input type="number" class="form-control" t-attf-name="#{ccounter}-questions_ids-#{question.id}"  required="This field is mandatory." t-if="question.is_individual"/>
+															<input type="number" class="form-control" t-attf-name="#{ccounter}-questions_ids-#{question.id}" t-if="not question.is_individual"/>
 														</div>
 														<div class="form-group" t-if="question.data_type == 'longtext'">
 															<label for="#{counter}-ta-#{question.id}"><t t-esc="question.title" /></label>
-															<textarea class="form-control" t-attf-name="#{counter}-questions_ids-#{question.id}" rows="5"></textarea>
+															<textarea class="form-control" t-attf-name="#{counter}-questions_ids-#{question.id}" rows="5" required="This field is mandatory." t-if="question.is_individual"></textarea>
+															<textarea class="form-control" t-attf-name="#{counter}-questions_ids-#{question.id}" rows="5" t-if="not question.is_individual"></textarea>
 														</div>
 														<div t-if="question.data_type == 'dropdown'">
 															<label><t t-esc="question.title" /></label>
-															<select  t-attf-name="#{counter}-answer_ids-#{question.id}" class="form-control">
+															<select t-if="question.is_individual" t-attf-name="#{counter}-answer_ids-#{question.id}" class="form-control" required="This field is mandatory">
+																<t t-foreach='question.answer_ids' t-as="answer">
+																  <option t-esc='answer.name' t-att-value='answer.id'/>
+																</t>
+															</select>
+															<select t-if="not question.is_individual" t-attf-name="#{counter}-answer_ids-#{question.id}" class="form-control">
 																<t t-foreach='question.answer_ids' t-as="answer">
 																  <option t-esc='answer.name' t-att-value='answer.id'/>
 																</t>
@@ -196,8 +203,11 @@
 														</div>
 														 <div class="form-group" t-if="question.data_type == 'text' or question.data_type == 'email'">
 															<label><t t-esc="question.title" /></label>
-															<input t-if="question.data_type == 'text'" type="text" class="form-control" t-attf-name="#{counter}-questions_ids-#{question.id}"  />
-															<input t-if="question.data_type == 'email'" type="email" class="form-control"  t-attf-name="#{counter}-questions_ids-#{question.id}" />
+															<input t-if="question.data_type == 'text' and question.is_individual" type="text" class="form-control" t-attf-name="#{counter}-questions_ids-#{question.id}" required="This field is mandatory."/>
+															<input t-if="question.data_type == 'text' and not question.is_individual" type="text" class="form-control" t-attf-name="#{counter}-questions_ids-#{question.id}"/>
+
+															<input t-if="question.data_type == 'email' and question.is_individual" type="email" class="form-control"  t-attf-name="#{counter}-questions_ids-#{question.id}" required="This field is mandatory."/>
+															<input t-if="question.data_type == 'email' and not question.is_individual" type="email" class="form-control"  t-attf-name="#{counter}-questions_ids-#{question.id}"/>
 														</div>
 														<div class="form-group" t-if="question.data_type == 'checkbox' or question.data_type == 'radio'">
 															<label><t t-esc="question.title" /></label>
