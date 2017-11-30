@@ -1,0 +1,241 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* nox_website_event_questions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e-20170801\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-29 04:50+0000\n"
+"PO-Revision-Date: 2017-11-29 04:50+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: Swedish \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.nox_registration_attendee_details
+msgid "(Free)"
+msgstr "(Free)"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.nox_registration_attendee_details
+msgid "<strong>Attendees</strong>"
+msgstr "<strong>Deltagare</strong>"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.nox_registration_attendee_details
+msgid "<strong>Common Questions</strong>"
+msgstr "<strong>Common Questions</strong>"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.nox_registration_attendee_details
+msgid "<strong>Email</strong>"
+msgstr "<strong>Målsmans epost</strong>"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.nox_registration_attendee_details
+msgid "<strong>Name</strong>"
+msgstr "<strong>Deltagarens namn</strong>"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.nox_registration_attendee_details
+msgid "<strong>Phone</strong>"
+msgstr "<strong>Målsmans telefon</strong>"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.view_event_form_inherit_question
+msgid "Advanced Questions"
+msgstr "Advanced Questions"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_question_answer_event_answer
+msgid "Answer"
+msgstr "Svar"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_attendee_answer_ids
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_total_answers
+#: model:ir.ui.menu,name:nox_website_event_questions.menu_report_event_answers
+#: model:ir.ui.view,arch_db:nox_website_event_questions.view_event_registration_answers_ext
+#: model:ir.ui.view,arch_db:nox_website_event_questions.view_event_registration_question_answer_search
+msgid "Answers"
+msgstr "Svar"
+
+#. module: nox_website_event_questions
+#: model:ir.model,name:nox_website_event_questions.model_event_registration
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_question_answer_event_registration_id
+#: model:ir.ui.view,arch_db:nox_website_event_questions.view_event_registration_question_answer_search
+msgid "Attendee"
+msgstr "Deltagare"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.nox_registration_attendee_details
+msgid "Attendee #"
+msgstr "Deltagare #"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.nox_registration_attendee_details
+msgid "Cancel Registration"
+msgstr "Avbryt registrering"
+
+#. module: nox_website_event_questions
+#: selection:event.question,data_type:0
+msgid "Checkbox"
+msgstr "Checkbox"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_question_note
+msgid "Comment"
+msgstr "Kommentar"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.nox_registration_attendee_details
+msgid "Continue"
+msgstr "Fortsätt"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_question_answer_create_uid
+msgid "Created by"
+msgstr "Skapad av"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_question_answer_create_date
+msgid "Created on"
+msgstr "Skapad den"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_question_data_type
+msgid "Datatypes"
+msgstr "Datatypes"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_question_answer_display_name
+msgid "Display Name"
+msgstr "Visa namn"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.view_event_question_form_multipledatatypes
+msgid "Displayed Question or Instruction"
+msgstr "Displayed Question or Instruction"
+
+#. module: nox_website_event_questions
+#: selection:event.question,data_type:0
+msgid "Dropdown"
+msgstr "Dropdown"
+
+#. module: nox_website_event_questions
+#: selection:event.question,data_type:0
+msgid "Email"
+msgstr "Email"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_question_answer_event_id
+#: model:ir.ui.view,arch_db:nox_website_event_questions.view_event_registration_question_answer_search
+msgid "Event"
+msgstr "Evenemang"
+
+#. module: nox_website_event_questions
+#: model:ir.model,name:nox_website_event_questions.model_event_registration_question_answer
+msgid "Event Attendee - Question's Answers"
+msgstr "Event Attendee - Question's Answers"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.view_event_registration_question_answer_tree
+msgid "Event Attendee Answers"
+msgstr "Event Attendee Answers"
+
+#. module: nox_website_event_questions
+#: model:ir.actions.act_window,name:nox_website_event_questions.action_event_registration_question_answers
+msgid "Event Registration Attendee Answers"
+msgstr "Event Registration Attendee Answers"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.view_event_registration_question_answer_search
+msgid "Group By"
+msgstr "Gruppera på"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_question_answer_id
+msgid "ID"
+msgstr "ID"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_question_answer___last_update
+msgid "Last Modified on"
+msgstr "Senast redigerad"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_question_answer_write_uid
+msgid "Last Updated by"
+msgstr "Senast uppdaterad av"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_question_answer_write_date
+msgid "Last Updated on"
+msgstr "Senast uppdaterad"
+
+#. module: nox_website_event_questions
+#: selection:event.question,data_type:0
+msgid "Longtext"
+msgstr "Longtext"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.view_event_form_inherit_question
+#: model:ir.ui.view,arch_db:nox_website_event_questions.view_event_question_form_multipledatatypes
+msgid "Mandatory"
+msgstr "Mandatory"
+
+#. module: nox_website_event_questions
+#: selection:event.question,data_type:0
+msgid "Number"
+msgstr "Number"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.view_event_form_inherit_question
+#: model:ir.ui.view,arch_db:nox_website_event_questions.view_event_question_form_multipledatatypes
+msgid "Options"
+msgstr "Alternativ"
+
+#. module: nox_website_event_questions
+#: model:ir.model.fields,field_description:nox_website_event_questions.field_event_registration_question_answer_event_question
+msgid "Question"
+msgstr "Fråga"
+
+#. module: nox_website_event_questions
+#: selection:event.question,data_type:0
+msgid "Radio"
+msgstr "Radio"
+
+#. module: nox_website_event_questions
+#: selection:event.question,data_type:0
+msgid "Text"
+msgstr "Text"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.nox_registration_attendee_details
+msgid "Ticket Type #"
+msgstr "Ticket Type #"
+
+#. module: nox_website_event_questions
+#: model:ir.model,name:nox_website_event_questions.model_event_question
+msgid "event.question"
+msgstr "event.question"
+
+#. module: nox_website_event_questions
+#: model:ir.model,name:nox_website_event_questions.model_event_report_answer_report
+msgid "event.report.answer.report"
+msgstr "event.report.answer.report"
+
+#. module: nox_website_event_questions
+#: model:ir.ui.view,arch_db:nox_website_event_questions.nox_registration_attendee_details
+msgid "or"
+msgstr "eller"
+
+#. module: nox_website_event_questions
+#: model:ir.model,name:nox_website_event_questions.model_question_datatype
+msgid "question.datatype"
+msgstr "question.datatype"
+
