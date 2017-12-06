@@ -55,7 +55,7 @@
             <field name="name">event.attendee.question.answers</field>
             <field name="model">event.registration.question.answer</field>
             <field name="arch" type="xml">
-                <tree string="Event Attendee Answers" create="0" delete="0">
+                <tree string="Event Attendee Answers" create="0" delete="1">
                     <field name="event_id"/>
                     <field name="event_registration_id"/>
                     <field name="event_question"/>
