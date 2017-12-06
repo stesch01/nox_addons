@@ -55,13 +55,13 @@
             <field name="name">event.attendee.question.answers</field>
             <field name="model">event.registration.question.answer</field>
             <field name="arch" type="xml">
-                <tree string="Event Attendee Answers" create="0" delete="1">
-                    <field name="event_id"/>
-                    <field name="event_registration_id"/>
-                    <field name="state"/>
-                    <field name="event_question"/>
+                <tree string="Event Attendee Answers" create="0" delete="1" editable="top">
+                    <field name="event_id" readonly="1"/>
+                    <field name="event_registration_id" readonly="1"/>
+                    <field name="state" readonly="1"/>
+                    <field name="event_question" readonly="1"/>
                     <field name="event_answer"/>
-                    <field name="create_date"/>
+                    <field name="create_date" readonly="1"/>
                 </tree>
             </field>
         </record>
