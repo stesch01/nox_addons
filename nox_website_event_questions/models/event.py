@@ -54,7 +54,16 @@ class EventRegistrationQAnswer(models.Model):
     _name = "event.registration.question.answer"
     _description = "Event Attendee - Question's Answers"
 
+    @api.depends('event_registration_id.state')
+    def set_attendee_state(self):
+        for answer in self:
+            answer.state = answer.event_registration_id.state
+
     event_registration_id = fields.Many2one('event.registration', 'Attendee')
+    state = fields.Selection(compute="set_attendee_state", selection=[('draft', 'Unconfirmed'), 
+                                ('cancel', 'Cancelled'),
+                                ('open', 'Confirmed'), 
+                                ('done', 'Attended')], string='Status', store=True)
     event_id = fields.Many2one(related='event_registration_id.event_id', string='Event', store=True)
     event_question = fields.Char('Question')
     event_answer = fields.Char('Answer')

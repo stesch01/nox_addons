@@ -58,6 +58,7 @@
                 <tree string="Event Attendee Answers" create="0" delete="1">
                     <field name="event_id"/>
                     <field name="event_registration_id"/>
+                    <field name="state"/>
                     <field name="event_question"/>
                     <field name="event_answer"/>
                     <field name="create_date"/>
