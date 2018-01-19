@@ -39,7 +39,8 @@ class WebsiteEventQuestionController(WebsiteEventSaleController):
                     request.env['event.registration.question.answer'].sudo().create({
                             'event_registration_id': list(attendee_ids)[-1],
                             'event_question': Question.title,
-                            'event_answer': answer
+                            'event_answer': answer,
+                            'question_id': question_id,
                         })
 
         # free tickets -> order with amount = 0: auto-confirm, no checkout
