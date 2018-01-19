@@ -48,7 +48,10 @@ class NoxEventReport(models.TransientModel):
             ws.write(row, 2, 'Email', table_heading_style)
 
             col = 3
+            #set question ids reference to map the questions answer correctly under each column
+            question_ids_list = []
             for question in rec.event_id.question_ids:
+                question_ids_list.append(question.id)
                 ws.write(row, col, question.title, table_heading_style)
                 col += 1
             row += 1
@@ -64,12 +67,14 @@ class NoxEventReport(models.TransientModel):
                     if col == 2:
                         ws.write(row, col, attendee['email'])
 
-                attendee_answers = self.env['event.registration.question.answer'].search_read([('event_registration_id', '=', attendee['id'])], 
-                                        fields=['event_answer'])
                 col = 3
-                for answer in attendee_answers:
-                    ws.write(row, col, answer['event_answer'])
-                    col += 1
+                for question_id in question_ids_list:
+                    attendee_answer = self.env['event.registration.question.answer'].search_read([('event_registration_id', '=', attendee['id']), 
+                                            ('question_id','=',question_id)], 
+                                            fields=['event_answer'])
+                    for answer in attendee_answer:
+                        ws.write(row, col, answer['event_answer'])
+                        col += 1
                 row += 1
 
 
