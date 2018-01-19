@@ -190,14 +190,14 @@
 														</div>
 														<div t-if="question.data_type == 'dropdown'">
 															<label><t t-esc="question.title" /></label>
-															<select t-if="question.is_individual" t-attf-name="#{counter}-answer_ids-#{question.id}" class="form-control" required="This field is mandatory">
+															<select t-if="question.is_individual" t-attf-name="#{counter}-questions_ids-#{question.id}" class="form-control" required="This field is mandatory">
 																<t t-foreach='question.answer_ids' t-as="answer">
-																  <option t-esc='answer.name' t-att-value='answer.id'/>
+																  <option t-esc='answer.name' t-att-value='answer.name'/>
 																</t>
 															</select>
 															<select t-if="not question.is_individual" t-attf-name="#{counter}-answer_ids-#{question.id}" class="form-control">
 																<t t-foreach='question.answer_ids' t-as="answer">
-																  <option t-esc='answer.name' t-att-value='answer.id'/>
+																  <option t-esc='answer.name' t-att-value='answer.name'/>
 																</t>
 															</select>
 														</div>
