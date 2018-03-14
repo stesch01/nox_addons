@@ -2,7 +2,7 @@
 
 from odoo import models, fields, api
 import xlwt
-import cStringIO
+from io import BytesIO
 import base64
 import time
 
@@ -78,7 +78,7 @@ class NoxEventReport(models.TransientModel):
                 row += 1
 
 
-            f = cStringIO.StringIO()
+            f = BytesIO()
             wb.save(f)
 
             out = base64.encodestring(f.getvalue())
