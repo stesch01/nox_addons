@@ -8,7 +8,7 @@
 
 {
     "name": "Events - Report",
-    "version": "1.0",
+    "version": "11.0",
     "author": "Linserv AB",
     "category": "Reporting",
     "summary": "Events - Report",

@@ -8,7 +8,7 @@
 
 {
     "name": "Website event question datatypes",
-    "version": "1.0",
+    "version": "11.0",
     "author": "Linserv AB",
     "category": "Events",
     "summary": "Website event question datatypes",
