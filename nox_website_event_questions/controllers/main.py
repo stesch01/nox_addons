@@ -10,7 +10,7 @@ from odoo.addons.website_event_sale.controllers.main import WebsiteEventSaleCont
 from odoo import http
 from odoo.http import request
 
-from odoo.addons.website.models.website import slug
+from odoo.addons.http_routing.models.ir_http import slug
 
 class WebsiteEventQuestionController(WebsiteEventSaleController):
 
