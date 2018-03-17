@@ -23,7 +23,7 @@
         'website_event_sale'
     ],
     "external_dependencies": {'python': ['xlwt']},
-    
+
     'description':"""
 ##################################################
     Website event question datatypes
@@ -46,6 +46,7 @@ It also defines functionality to generate xls report for Event.
     'views/nox_website_event_questions_template.xml',
     'views/event_views.xml',
 	
+    'report/nox_event_report.xml',
     'report/website_event_report_menu.xml',
 	
     'views/asset.xml',
