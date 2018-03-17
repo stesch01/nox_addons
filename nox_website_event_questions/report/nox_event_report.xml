@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="view_nox_event_report" model="ir.ui.view">
+			<field name="name">view.nox.event.report</field>
+			<field name="model">nox.event.report</field>
+			<field name="arch" type="xml">
+				<form string="Event - Report">
+					<label string="Click on generate button to generate report." colspan="4"/>
+					<group>
+						<field name="event_id" attrs="{'readonly':[('name','!=',False)]}" options="{'no_open': 1, 'no_create': 1}"/>
+						<field name="file" filename="name" readonly="1" attrs="{'invisible':[('name','=',False)]}"/>
+						<field name="name" invisible="1"/>
+					</group>
+					<footer>
+						<button name="action_generate_report" type="object" string="Generate" class="oe_highlight" attrs="{'invisible':[('name','!=',False)]}"/>
+						<button name="close" special="cancel" string="Close" class="oe_highlight" attrs="{'invisible':[('name','=',False)]}"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_nox_event_report" model="ir.actions.act_window">
+			<field name="name">Events - Report</field>
+			<field name="res_model">nox.event.report</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem id="menu_nox_event_report"
+			parent="event.menu_reporting_events"
+			action="action_nox_event_report"
+			sequence="100"
+			/>
+
+	</data>
+</odoo>

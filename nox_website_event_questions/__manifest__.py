@@ -22,6 +22,8 @@
         'website_event_questions',
         'website_event_sale'
     ],
+    "external_dependencies": {'python': ['xlwt']},
+    
     'description':"""
 ##################################################
     Website event question datatypes
@@ -35,6 +37,8 @@ This modules adds different data types to define Event Questions.
         * Checkbox
         * Radio
         * Number
+
+It also defines functionality to generate xls report for Event.
         """,	
     "demo": [],
     "data": [
